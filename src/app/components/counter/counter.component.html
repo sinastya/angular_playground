@@ -1,0 +1,6 @@
+<h2>{{title}}</h2>
+<div>
+  <app-button [btnName]="'-'" (onClick)="decrease()" [isDisabled]="disabled"></app-button>
+  <p>{{result}}</p>
+  <app-button [btnName]="'+'" (onClick)="increase()"></app-button>
+</div>

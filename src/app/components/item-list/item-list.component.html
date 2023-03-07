@@ -1,0 +1,2 @@
+<!-- <div *ngFor="let item of itemsData">{{item}}</div> -->
+<app-item *ngFor="let item of items" [itemText]="item" (onDelete)="onDelete.emit(item)"></app-item>
