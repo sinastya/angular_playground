@@ -34,4 +34,8 @@ export class AppComponent {
   deleteItem(id: number) {
     this.itemsData = this.itemsData.filter((item) => item.id !== id);
   }
+
+  deleteAll() {
+    this.itemsData = [];
+  }
 }
