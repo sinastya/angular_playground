@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IItemsData } from 'src/app/interfaces/IItem';
 
 @Component({
   selector: 'app-item',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ItemComponent {
   @Input()
-  itemText: string = '';
+  item: IItemsData = { id: 0, text: '' };
 
   @Output()
   onDelete = new EventEmitter();

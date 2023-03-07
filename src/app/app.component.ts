@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { IItemsData } from './interfaces/IItem';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,13 @@ export class AppComponent {
   title = 'ToDo_Angular_by801';
   subTitle2 = 'ToDo';
 
-  itemsData: Array<string> = ['todo1', 'todo2', 'todo3'];
+  currentID = 3;
+
+  itemsData: Array<IItemsData> = [
+    { id: 0, text: 'todo0' },
+    { id: 1, text: 'todo1' },
+    { id: 2, text: 'todo2' },
+  ];
 
   inputText = '';
 
@@ -18,11 +24,12 @@ export class AppComponent {
   }
 
   addNewItem() {
-    this.itemsData.push(this.inputText);
+    this.itemsData.push({ id: this.currentID, text: this.inputText });
     this.inputText = '';
+    this.currentID++;
   }
 
-  deleteItem(text: string) {
-    this.itemsData = this.itemsData.filter((item) => item !== text);
+  deleteItem(id: number) {
+    this.itemsData = this.itemsData.filter((item) => item.id !== id);
   }
 }

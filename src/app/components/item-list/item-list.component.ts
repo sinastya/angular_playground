@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IItemsData } from 'src/app/interfaces/IItem';
 
 @Component({
   selector: 'app-item-list',
@@ -7,9 +8,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ItemListComponent {
   @Input()
-  items: Array<string> = [];
+  items: Array<IItemsData> = [];
 
   @Output()
-  onDelete = new EventEmitter();
+  onDelete = new EventEmitter<number>();
   // onEdit = new EventEmitter<string>();
 }
