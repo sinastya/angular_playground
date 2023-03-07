@@ -24,9 +24,11 @@ export class AppComponent {
   }
 
   addNewItem() {
-    this.itemsData.push({ id: this.currentID, text: this.inputText });
-    this.inputText = '';
-    this.currentID++;
+    if (this.inputText !== '') {
+      this.itemsData.push({ id: this.currentID, text: this.inputText });
+      this.inputText = '';
+      this.currentID++;
+    }
   }
 
   deleteItem(id: number) {
