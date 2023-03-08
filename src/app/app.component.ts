@@ -1,3 +1,4 @@
+import { ItemService } from './services/item.service';
 import { Component } from '@angular/core';
 import { IItemsData } from './interfaces/IItem';
 @Component({
@@ -9,33 +10,24 @@ export class AppComponent {
   title = 'ToDo_Angular_by801';
   subTitle2 = 'ToDo';
 
-  currentID = 3;
-
-  itemsData: Array<IItemsData> = [
-    { id: 0, text: 'todo0' },
-    { id: 1, text: 'todo1' },
-    { id: 2, text: 'todo2' },
-  ];
-
   inputText = '';
 
-  consoleLog(text: string) {
-    console.log(text);
+  constructor(public itemService: ItemService) {
+    this.itemService = itemService;
   }
 
   addNewItem() {
     if (this.inputText !== '') {
-      this.itemsData.push({ id: this.currentID, text: this.inputText });
+      this.itemService.addNewItem(this.inputText);
       this.inputText = '';
-      this.currentID++;
     }
   }
 
   deleteItem(id: number) {
-    this.itemsData = this.itemsData.filter((item) => item.id !== id);
+    this.itemService.deleteItem(id);
   }
 
   deleteAll() {
-    this.itemsData = [];
+    this.itemService.deleteAll();
   }
 }
