@@ -1,5 +1,5 @@
 <h2>{{subTitle2}}</h2>
 <input [(ngModel)]="inputText" />
-<app-button [btnName]="'create'" (onClick)="addNewItem()"></app-button>
+<app-button [btnName]="'create'" (onClick)="addNewItem()" [isDisabled]="!inputText"></app-button>
 <app-item-list [items]="itemsData" (onDelete)="deleteItem($event)" class="items-block"></app-item-list>
 <app-button [btnName]="'delete all items'" (onClick)="deleteAll()" class="delete-all"></app-button>
