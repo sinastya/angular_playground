@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IItemsData } from '../interfaces/IItem';
-import { ItemService } from '../services/item.service';
+import { IItemsData } from '../../interfaces/IItem';
+import { ItemService } from '../../services/item.service';
 
 @Component({
   selector: 'app-todo',

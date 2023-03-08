@@ -8,7 +8,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemComponent } from './components/item/item.component';
 import { CounterComponent } from './components/counter/counter.component';
-import { TodoComponent } from './todo/todo.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
