@@ -20,7 +20,8 @@ export class ItemService {
   }
 
   deleteItem(id: number) {
-    this.itemsData = this.itemsData.filter((item) => item.id !== id);
+    const index = this.itemsData.findIndex((el) => el.id === id);
+    this.itemsData.splice(index, 1);
   }
 
   deleteAll() {

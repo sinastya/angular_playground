@@ -12,8 +12,11 @@ export class AppComponent {
 
   inputText = '';
 
-  constructor(public itemService: ItemService) {
+  itemsData: Array<IItemsData>;
+
+  constructor(private itemService: ItemService) {
     this.itemService = itemService;
+    this.itemsData = this.itemService.itemsData;
   }
 
   addNewItem() {
