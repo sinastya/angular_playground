@@ -31,7 +31,6 @@ export class ItemService {
   }
 
   deleteAll() {
-    this.itemsData = [];
-    console.log(11111);
+    this.itemsData.splice(0, this.itemsData.length);
   }
 }
