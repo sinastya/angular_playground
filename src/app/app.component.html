@@ -1,10 +1,6 @@
 <h1>{{title}}</h1>
-
-<app-counter></app-counter>
-
-<h2>{{subTitle2}}</h2>
-<input [(ngModel)]="inputText" />
-<!-- <app-button (onClick)="consoleLog($event)"></app-button> -->
-<app-button [btnName]="'create'" (onClick)="addNewItem()"></app-button>
-<app-item-list [items]="itemsData" (onDelete)="deleteItem($event)" class="items-block"></app-item-list>
-<app-button [btnName]="'delete all items'" (onClick)="deleteAll()" class="delete-all"></app-button>
+<nav>
+  <a routerLink="counter">Counter</a>
+  <a routerLink="todo">ToDo List</a>
+</nav>
+<router-outlet></router-outlet>

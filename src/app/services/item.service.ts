@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IItemsData } from '../interfaces/IItem';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +11,15 @@ export class ItemService {
     { id: 1, text: 'todo1' },
     { id: 2, text: 'todo2' },
   ];
-  currentID = this.itemsData.length - 1;
+  currentID = this.itemsData.length;
+
+  // constructor(private HttpClient: HttpClient) {}
 
   addNewItem(inputText: string) {
     if (inputText !== '') {
+      // this.HttpClient.post('/', { id: this.currentID, text: inputText })
+      //   .pipe()
+      //   .subscribe();
       this.itemsData.push({ id: this.currentID, text: inputText });
       this.currentID++;
     }
@@ -26,5 +32,6 @@ export class ItemService {
 
   deleteAll() {
     this.itemsData = [];
+    console.log(11111);
   }
 }

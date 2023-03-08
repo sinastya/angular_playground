@@ -2,10 +2,8 @@ h1 {
   font-size: 30px;
 }
 
-.items-block {
-  font-style: italic;
-}
-
-.delete-all {
-  display: block;
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
 }
