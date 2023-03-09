@@ -9,6 +9,7 @@ import { ItemListComponent } from './components/item-list/item-list.component';
 import { ItemComponent } from './components/item/item.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TodoComponent } from './components/todo/todo.component';
     ItemComponent,
     CounterComponent,
     TodoComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
