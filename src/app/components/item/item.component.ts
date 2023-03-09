@@ -8,9 +8,17 @@ import { IItemsData } from 'src/app/interfaces/IItem';
 })
 export class ItemComponent {
   @Input()
-  item: IItemsData = { id: 0, text: '' };
+  item: IItemsData = { id: 0, text: '', editable: false };
 
   @Output()
   onDelete = new EventEmitter();
-  // onEdit = new EventEmitter<string>();
+
+  @Output()
+  onEdit = new EventEmitter();
+
+  @Output()
+  onCancel = new EventEmitter();
+
+  @Output()
+  onEditSubmit = new EventEmitter();
 }

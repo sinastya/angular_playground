@@ -1,3 +1,4 @@
+import { IEditData } from './../../interfaces/IItem';
 import { Component } from '@angular/core';
 import { IItemsData } from '../../interfaces/IItem';
 import { ItemService } from '../../services/item.service';
@@ -28,6 +29,18 @@ export class TodoComponent {
 
   deleteItem(id: number) {
     this.itemService.deleteItem(id);
+  }
+
+  editItem(id: number) {
+    this.itemService.editItem(id);
+  }
+
+  onCancel() {
+    this.itemService.cancelEdit();
+  }
+
+  onEditSubmit(obj: IEditData) {
+    this.itemService.editSubmitItem({ id: obj.id, text: obj.text });
   }
 
   deleteAll() {
