@@ -40,10 +40,14 @@ export class TodoComponent {
   }
 
   onEditSubmit(obj: IEditData) {
-    this.itemService.editSubmitItem({ id: obj.id, text: obj.text });
+    this.itemService.editSubmitItem({ id: obj.id, title: obj.title });
   }
 
   deleteAll() {
     this.itemService.deleteAll();
+  }
+
+  toggleDone(id: number) {
+    this.itemService.toggleDone(id);
   }
 }

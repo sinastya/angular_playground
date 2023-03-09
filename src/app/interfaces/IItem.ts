@@ -1,11 +1,12 @@
 export interface IItemsDto {
   id: number;
-  text: string;
+  title: string;
+  completed: boolean;
 }
 
 export interface IEditData {
   id: number;
-  text: string;
+  title: string;
 }
 
 export interface IItemsData extends IItemsDto {

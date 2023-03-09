@@ -1,7 +1,10 @@
 <!-- <p [textContent]="name"></p> -->
-<p *ngIf="!item.editable">{{item.text}}</p>
+<div class="item">
+  <input type="checkbox" [checked]="item.completed" (change)="toggleDone.emit()">
+  <p *ngIf="!item.editable">{{item.title}}</p>
+</div>
 <div *ngIf="item.editable">
-  <input [(ngModel)]="item.text">
+  <input [(ngModel)]="item.title">
   <app-button [btnName]="'cancel'" (onClick)="onCancel.emit()"></app-button>
   <app-button [btnName]="'ok'" (onClick)="onEditSubmit.emit()"></app-button>
 </div>

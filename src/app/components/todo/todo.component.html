@@ -2,5 +2,5 @@
 <input [(ngModel)]="inputText" />
 <app-button [btnName]="'create'" (onClick)="addNewItem()" [isDisabled]="!inputText"></app-button>
 <app-item-list [items]="itemsData" (onDelete)="deleteItem($event)" (onEdit)="editItem($event)" (onCancel)="onCancel()"
-  (onEditSubmit)="onEditSubmit($event)" class="items-block"></app-item-list>
+  (onEditSubmit)="onEditSubmit($event)" (toggleDone)="toggleDone($event)" class="items-block"></app-item-list>
 <app-button [btnName]="'delete all items'" (onClick)="deleteAll()" class="delete-all"></app-button>

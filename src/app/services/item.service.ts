@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItemService {
   itemsDto: Array<IItemsDto> = [
-    { id: 0, text: 'todo0' },
-    { id: 1, text: 'todo1' },
-    { id: 2, text: 'todo2' },
+    { id: 0, title: 'todo0', completed: false },
+    { id: 1, title: 'todo1', completed: false },
+    { id: 2, title: 'todo2', completed: false },
   ];
   itemsData: Array<IItemsData> = [];
   currentID = 0;
@@ -34,8 +34,9 @@ export class ItemService {
       //   .subscribe();
       this.itemsData.push({
         id: this.currentID,
-        text: inputText,
+        title: inputText,
         editable: false,
+        completed: false,
       });
       this.currentID++;
     }
@@ -58,12 +59,17 @@ export class ItemService {
   editSubmitItem(obj: IEditData) {
     const item = this.itemsData.find((el) => el.id === obj.id);
     if (item) {
-      item.text = obj.text;
+      item.title = obj.title;
       item.editable = false;
     }
   }
 
   deleteAll() {
     this.itemsData.splice(0, this.itemsData.length);
+  }
+
+  toggleDone(id: number) {
+    const item = this.itemsData.find((el) => el.id === id);
+    if (item) item.completed = !item.completed;
   }
 }

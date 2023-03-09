@@ -21,4 +21,7 @@ export class ItemListComponent {
 
   @Output()
   onEditSubmit = new EventEmitter<IEditData>();
+
+  @Output()
+  toggleDone = new EventEmitter<number>();
 }

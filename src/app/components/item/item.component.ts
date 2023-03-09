@@ -8,7 +8,7 @@ import { IItemsData } from 'src/app/interfaces/IItem';
 })
 export class ItemComponent {
   @Input()
-  item: IItemsData = { id: 0, text: '', editable: false };
+  item: IItemsData = { id: 0, title: '', editable: false, completed: false };
 
   @Output()
   onDelete = new EventEmitter();
@@ -21,4 +21,7 @@ export class ItemComponent {
 
   @Output()
   onEditSubmit = new EventEmitter();
+
+  @Output()
+  toggleDone = new EventEmitter();
 }
