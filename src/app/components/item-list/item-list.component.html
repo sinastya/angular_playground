@@ -1,4 +1,4 @@
 <!-- <div *ngFor="let item of itemsData">{{item}}</div> -->
 <app-item *ngFor="let i of items" [item]="i" (onDelete)="onDelete.emit(i.id)" (onEdit)="onEdit.emit(i.id)"
-  (onCancel)="onCancel.emit(i.id)" (onEditSubmit)="onEditSubmit.emit({id: i.id, title: i.title})"
+  (onCancel)="onCancel.emit(i.id)" (onEditSubmit)="onEditSubmit.emit($event)"
   (toggleDone)="toggleDone.emit(i.id)"></app-item>

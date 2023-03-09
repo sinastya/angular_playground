@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IItemsData } from 'src/app/interfaces/IItem';
+import { IEditData, IItemsData } from 'src/app/interfaces/IItem';
 
 @Component({
   selector: 'app-item',
@@ -20,7 +20,7 @@ export class ItemComponent {
   onCancel = new EventEmitter();
 
   @Output()
-  onEditSubmit = new EventEmitter();
+  onEditSubmit = new EventEmitter<IEditData>();
 
   @Output()
   toggleDone = new EventEmitter();

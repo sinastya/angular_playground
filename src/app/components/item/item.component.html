@@ -4,9 +4,9 @@
   <p *ngIf="!item.editable">{{item.title}}</p>
 </div>
 <div *ngIf="item.editable">
-  <input [(ngModel)]="item.title">
+  <input [value]="item.title" #editInput>
   <app-button [btnName]="'cancel'" (onClick)="onCancel.emit()"></app-button>
-  <app-button [btnName]="'ok'" (onClick)="onEditSubmit.emit()"></app-button>
+  <app-button [btnName]="'ok'" (onClick)="onEditSubmit.emit({id: item.id, title: editInput.value})"></app-button>
 </div>
 <div *ngIf="!item.editable">
   <app-button [btnName]="'delete'" (onClick)="onDelete.emit()"></app-button>
